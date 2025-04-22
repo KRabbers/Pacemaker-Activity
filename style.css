@@ -1,30 +1,67 @@
 body {
-    margin:0;
-    padding:0;
-    background:black;
-    width:100%;
-    height:100%;
+    margin: 0;
+    padding: 0;
+    background: black;
+    width: 100%;
+    height: 100%;
 }
 
-#room{
-    margin:0;
-    padding:0;
-    width:1400px; 
+#room {
+    position: relative;
+    width: 1400px;
     height: 900px;
-    background-image:url()
+    margin: 0 auto;
+    background-color: black; 
 }
 
-#room >*{
+
+#Room {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    pointer-events: none; 
+}
+
+#Door { 
+    position: absolute;
+    top:226px; 
+    left: 1096px; 
+    width: 290px;
+    height:478px;
+    z-index: 1;
+}
+
+#Patient { 
+    position: absolute;
+    top: 291px; 
+    left: 80px;
+    width: 290px;   
+    height: 478px; 
+    z-index: 2;
+}
+
+#Programmer { 
+    display: block;
+    position: absolute;
+    top: 417px; 
+    left: 590px; 
+    z-index: 3;
+}
+
+#Phone { 
     position:absolute;
-    margin:0;
-    padding:0;
+    top: 528px; 
+    left: 835px;
+    z-index: 4; 
 }
 
-
-p{
-    color:black;
+p {
+    color: black;
 }
 
-h1{
+h1 {
     font-weight: bold;
 }
