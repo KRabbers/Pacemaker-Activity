@@ -6,11 +6,13 @@
     </head>
     <body>
         <div id="room">
+
             <img id="Room" src="Room.png">
             <img id="Door" src="Door.png" onclick="tryDoor()">
             <img id="Patient" src="Patient.png" onclick="tryPatient()">
             <img id="Programmer" src="Programmer.png" onclick="tryProgrammer()">
             <img id="Phone" src="Phone.png" onclick="tryPhone()">
+
         </div>
 
         <script>
@@ -25,7 +27,7 @@
                     alert("Incorrect code. Try again.");
                 }
             }
-
+        
             function tryProgrammer() {
                 console.log("You clicked the programmer!");
                 alert("You clicked the programmer! Device Data shows......What is the most likely troublshooting issue? Code SHOCK for undersensing or Code  for oversensing of EMI");
@@ -40,7 +42,7 @@
                 console.log("You clicked the phone!");
                 var comboTry = prompt("Would you like to call Tech Services? (yes or no)");
                 if (comboTry.toLowerCase() == "yes") {
-                    alert("You called Tech Services! They tell you that .......");
+                    alert("You called Tech Services! They tell you that");
                 } else {
                     alert("You decided not to call Tech Services. Good luck!");
                 }
