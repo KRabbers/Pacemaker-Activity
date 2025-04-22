@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link
+         rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="room">
+            <img id="Room" src="Room.png">
+            <img id="Door" src="Door.png" onclick="tryDoor()">
+            <img id="Patient" src="Patient.png" onclick="tryPatient()">
+            <img id="Programmer" src="Programmer.png" onclick="tryProgrammer()">
+            <img id="Phone" src="Phone.png" onclick="tryPhone()">
+        </div>
+
+        <script>
+
+            function tryDoor() {
+                console.log("You tried the door...it did not open.");
+                var comboTry = prompt("You enter the code to move on to your next patient...");
+                if (comboTry == "PACE") {
+                    alert("You entered the code correctly! You can now move on to your next patient!");
+                    window.location.href = "new.html"; // Redirect to new.html
+                } else {
+                    alert("Incorrect code. Try again.");
+                }
+            }
+
+            function tryProgrammer() {
+                console.log("You clicked the programmer!");
+                alert("You clicked the programmer! Device Data shows......What is the most likely troublshooting issue? Code SHOCK for undersensing or Code  for oversensing of EMI");
+            }
+
+            function tryPatient() {
+                console.log("You clicked the patient!");
+                alert("You clicked the patient! Patient complains that whenever he uses his TENS unit, he passes out.");
+            }
+
+            function tryPhone() {
+                console.log("You clicked the phone!");
+                var comboTry = prompt("Would you like to call Tech Services? (yes or no)");
+                if (comboTry.toLowerCase() == "yes") {
+                    alert("You called Tech Services! They tell you that .......");
+                } else {
+                    alert("You decided not to call Tech Services. Good luck!");
+                }
+            }
+
+        </script>
+
+    </body>
+</html>
