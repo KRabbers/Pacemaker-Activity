@@ -12,6 +12,7 @@
             <img id="Patient" src="Patient.png" onclick="tryPatient()">
             <img id="Programmer" src="Programmer.png" onclick="tryProgrammer()">
             <img id="Phone" src="Phone.png" onclick="tryPhone()">
+            <img id="notecard" src="Note card.png">
 
         </div>
 
@@ -30,23 +31,39 @@
         
             function tryProgrammer() {
                 console.log("You clicked the programmer!");
-                alert("You clicked the programmer! Device Data shows:                                    RA: Sensing - 1mV, Impedance - 887 ohms, Threshold - 0.4V @ 0.4ms  RV: Sensing - 10mV, Impedance - 645 ohms, Threshold 0.6V @ 0.4ms, Arrythmia Logbook: Multiple ATR and VT episodes correlating with patient history......What is the most likely troublshooting issue?            Code = SHOCK for device undersensing or Code = PACE for device oversensing of EMI");
-            }
+                var comboTry = prompt("You interrogated the patient's pacemaker!\n\nDevice Data shows:\n\nUnderlying rhythm is Complete Heart Block when tested VVI 30bpm\n\nRA: Sensing - 1mV, Impedance - 887 ohms, Threshold - 0.4V @ 0.4ms\n\nRV: Sensing - NA, Impedance - 645 ohms, Threshold 0.6V @ 0.4ms\n\nArrhythmia Logbook: Multiple ATR and VT episodes correlating with patient history...\n\nWhat is the most likely troubleshooting issue?\n\nundersensing or oversensing?\n\nPlease enter your answer below:");
 
+                if (comboTry == "undersensing") {
+                    alert("You've been given code PACE.");
+                }
+                if (comboTry == "Undersensing") {
+                        alert("You've been given code PACE.");
+                }
+                else if (comboTry == "oversensing") {
+                    alert("You've been given code SHOCK.");
+                } 
+                else if (comboTry == "Oversensing") {
+                    alert("You've been given code SHOCK.");
+                } 
+                else {
+                    alert("Invalid input. Please enter 'Undersensing' or 'Oversensing'.");
+                }
+            }
             function tryPatient() {
                 console.log("You clicked the patient!");
-                alert("You clicked the patient! Patient complains that whenever he uses his TENS unit, he passes out.");
+                alert("You ask your Harold how they've been feeling.\n\n Harold:\n\n I feel pretty good. I feel like I'm able to walk further than I used to. I did notice that every time I use my TENS unit, I suddenly fall asleep. My daughter says it looks like I pass out.");
             }
 
             function tryPhone() {
                 console.log("You clicked the phone!");
                 var comboTry = prompt("Would you like to call Tech Services? (yes or no)");
-                if (comboTry.toLowerCase() == "yes") {
-                    alert("You called Tech Services! They tell you that");
-                } else {
-                    alert("You decided not to call Tech Services. Good luck!");
-                }
-            }
+
+                 if (comboTry.toLowerCase() === "yes") {
+                    alert("You called Tech Services! They remind you to check if the patient is pacemaker dependent. They also remind you that using a TENS unit with a pacemaker can cause pacing inhibition.");
+                 } else {
+                     alert("You decided not to call Tech Services. Good luck!");
+                 }
+}
 
         </script>
 
