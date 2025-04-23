@@ -12,7 +12,7 @@
             <img id="Patient" src="Patient.png" onclick="tryPatient()">
             <img id="Programmer" src="Programmer.png" onclick="tryProgrammer()">
             <img id="Phone" src="Phone.png" onclick="tryPhone()">
-            <img id="notecard" src="Note card.png">
+            <img id="notecard" src="Notecard.png" onclick="tryNote()">
 
         </div>
 
@@ -23,7 +23,7 @@
                 var comboTry = prompt("You enter the code to move on to your next patient...");
                 if (comboTry == "PACE") {
                     alert("You entered the code correctly! You can now move on to your next patient!");
-                    window.location.href = "new.html"; // Redirect to new.html
+                    window.location.href = "new.html";
                 } else {
                     alert("Incorrect code. Try again.");
                 }
@@ -32,40 +32,41 @@
             function tryProgrammer() {
                 console.log("You clicked the programmer!");
                 var comboTry = prompt("You interrogated the patient's pacemaker!\n\nDevice Data shows:\n\nUnderlying rhythm is Complete Heart Block when tested VVI 30bpm\n\nRA: Sensing - 1mV, Impedance - 887 ohms, Threshold - 0.4V @ 0.4ms\n\nRV: Sensing - NA, Impedance - 645 ohms, Threshold 0.6V @ 0.4ms\n\nArrhythmia Logbook: Multiple ATR and VT episodes correlating with patient history...\n\nWhat is the most likely troubleshooting issue?\n\nundersensing or oversensing?\n\nPlease enter your answer below:");
-
-                if (comboTry == "undersensing") {
+        
+                let normalized = comboTry.trim().toLowerCase();
+        
+                if (normalized === "undersensing") {
                     alert("You've been given code PACE.");
-                }
-                if (comboTry == "Undersensing") {
-                        alert("You've been given code PACE.");
-                }
-                else if (comboTry == "oversensing") {
+                } else if (normalized === "oversensing") {
                     alert("You've been given code SHOCK.");
-                } 
-                else if (comboTry == "Oversensing") {
-                    alert("You've been given code SHOCK.");
-                } 
-                else {
-                    alert("Invalid input. Please enter 'Undersensing' or 'Oversensing'.");
+                } else {
+                    alert("Invalid input. Please enter 'undersensing' or 'oversensing'.");
                 }
             }
+        
             function tryPatient() {
                 console.log("You clicked the patient!");
-                alert("You ask your Harold how they've been feeling.\n\n Harold:\n\n I feel pretty good. I feel like I'm able to walk further than I used to. I did notice that every time I use my TENS unit, I suddenly fall asleep. My daughter says it looks like I pass out.");
+                alert("You ask Harold how he's been feeling.\n\nHarold:\n\nI feel pretty good. I feel like I'm able to walk further than I used to. I did notice that every time I use my TENS unit, I suddenly fall asleep. My daughter says it looks like I pass out.");
             }
-
+        
             function tryPhone() {
                 console.log("You clicked the phone!");
                 var comboTry = prompt("Would you like to call Tech Services? (yes or no)");
-
-                 if (comboTry.toLowerCase() === "yes") {
+        
+                if (comboTry.toLowerCase() === "yes") {
                     alert("You called Tech Services! They remind you to check if the patient is pacemaker dependent. They also remind you that using a TENS unit with a pacemaker can cause pacing inhibition.");
-                 } else {
-                     alert("You decided not to call Tech Services. Good luck!");
-                 }
-}
-
+                } else {
+                    alert("You decided not to call Tech Services. Good luck!");
+                }
+            }
+        
+            function tryNote() {
+                console.log("You clicked the notecard!");
+                alert("You found a note!\n\nClick on the phone to call Tech Services!");
+            }
+        
         </script>
+        
 
     </body>
 </html>
