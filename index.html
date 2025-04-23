@@ -5,6 +5,13 @@
          rel="stylesheet" href="style.css">
     </head>
     <body>
+        <div id="welcome-popup" onclick="closePopup()">
+            <div id="popup-content">
+              <h2>Welcome to the Pacemaker Troubleshooting Room!</h2>
+              <p>Click anywhere on this box to begin!</p>
+            </div>
+          </div>
+
         <div id="room">
 
             <img id="Room" src="Room.png">
@@ -64,6 +71,10 @@
                 console.log("You clicked the notecard!");
                 alert("You found a note!\n\nClick on the phone to call Tech Services!");
             }
+
+            function closePopup() {
+    document.getElementById("welcome-popup").style.display = "none";
+}
         
         </script>
         
