@@ -27,10 +27,10 @@ body {
 
 #Door { 
     position: absolute;
-    top:226px; 
-    left: 1096px; 
+    top:239px; 
+    left: 1099px; 
     width: 290px;
-    height:478px;
+    height:477px;
     z-index: 1;
 }
 
