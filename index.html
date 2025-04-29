@@ -3,9 +3,10 @@
     <head>
         <link
          rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </head>
     <body>
-            <div id="welcome-popup" onclick="closePopup()">
+        <div id="welcome-popup" onclick="closePopup()">
             <div id="popup-content">
               <h2>Welcome to the Pacemaker Troubleshooting Room!</h2>
               <p>Identify the troubleshooting issue by interacting with the room to help your patient and reveal the code to move on.</p>
@@ -21,8 +22,12 @@
             <img id="Programmer" src="Programmer.png" onclick="tryProgrammer()">
             <img id="Phone" src="Phone.png" onclick="tryPhone()">
             <img id="notecard" src="Notecard.png" onclick="tryNote()">
+            <img src="https://via.placeholder.com/150" alt="Pacemaker" style="cursor:pointer;" onclick="startPuzzle()">
 
         </div>
+
+        /images/
+            QuickNotes.png
 
         <script>
 
@@ -76,6 +81,39 @@
             function closePopup() {
     document.getElementById("welcome-popup").style.display = "none";
 }
+function startPuzzle() {
+  Swal.fire({
+    text: 'You have interrogated the patients pacemaker',
+    imageUrl: 'images/QuickNotes.png',
+    imageWidth: 400,
+    imageHeight: 200,
+    showCancelButton: true,
+    showDenyButton: true,
+    confirmButtonText: 'Increase Output',
+    denyButtonText: 'Check Lead',
+    cancelButtonText: 'Replace Battery'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      showImage('https://via.placeholder.com/400x200?text=Output+Increased');
+    } else if (result.isDenied) {
+      showImage('https://via.placeholder.com/400x200?text=Lead+Check');
+    } else {
+      showImage('https://via.placeholder.com/400x200?text=Battery+Replaced');
+    }
+  });
+}
+
+function showImage(imgUrl) {
+  Swal.fire({
+    title: 'Action Result',
+    imageUrl: imgUrl,
+    imageWidth: 400,
+    imageAlt: 'Result image',
+    confirmButtonText: 'Continue'
+  });
+}
+
+
         
         </script>
         
